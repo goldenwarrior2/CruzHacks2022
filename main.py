@@ -24,18 +24,8 @@ PARAMETERS = {'term': 'restaurants',
 response = requests.get(url=ENDPOINT, params=PARAMETERS, headers=HEADERS)
 # convert the JSON string to a Dictionary
 business_data = response.json()
-print('yes')
-# recommended_businesses = []
-# random_offsets = [random.randrange(0, business_data['total']) for i in range(NUM_RECOMMENDATIONS)]
-# print(random_offsets)
-# for i in range(NUM_RECOMMENDATIONS):
-#     PARAMETERS['offset'] = random_offsets[i]
-#     # Make a request to the yelp API
-#     response = requests.get(url=ENDPOINT, params=PARAMETERS, headers=HEADERS)
-#     # convert the JSON string to a Dictionary
-#     business_data = response.json()
-#     recommended_businesses.append(business_data['businesses'][0]['name'])
-#
+
+# prints every business in the area
 # for business in recommended_businesses:
 #     print(business)
 
@@ -52,7 +42,7 @@ while len(all_businesses) < business_data['total']:
 
 business_set = set(all_businesses)
 list_recommendations = random.sample(business_set, NUM_RECOMMENDATIONS)
-print("yes")
+
 # for rec in list_recommendations:
 #     print(rec)
 # create a dictionary for each business with keys for
